@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: dep-hello-kiamol-69
+
+spec:
+  selector:
+    matchLabels:
+      app: kiamol # any key-value pair
+  # the template is used when the deployment creates pods
+  template:
+    metadata:
+      labels:
+        app: kiamol
+    spec:
+      containers:
+        - name: web
+          image: kiamol/ch02-hello-kiamol
+

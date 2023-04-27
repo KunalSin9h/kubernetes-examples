@@ -1,0 +1,14 @@
+# App Manifest always specify the version of Kubernetes API
+apiVersion: v1
+
+# And the type of resource
+kind: Pod
+
+metadata: 
+  name: hello-kiamol-69
+
+spec:
+  containers:
+    - name: web
+      image: kiamol/ch02-hello-kiamol
+
