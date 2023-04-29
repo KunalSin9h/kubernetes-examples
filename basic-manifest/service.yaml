@@ -8,5 +8,9 @@ spec:
   selector:
     app: sleep-2 # matches all Pods with an ‘app’ label set to ‘sleep-2’
   ports:
-    - port: 80 # listen on port 80 and send to port 80 on the Pod 
-      # like sleep-2-com:80 -> pod:80
+    - protocol: TCP
+      name: web-port
+      port: 80
+      targetPort: 80
+    # - port: 80 # listen on port 80 and send to port 80 on the Pod 
+    #   # like sleep-2-com:80 -> pod:80
