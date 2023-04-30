@@ -17,4 +17,6 @@ spec:
       containers:
         - name: web
           image: kiamol/ch02-hello-kiamol
+          ports:
+            - containerPort: 80
 

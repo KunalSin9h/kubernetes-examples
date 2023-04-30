@@ -11,4 +11,9 @@ spec:
   containers:
     - name: web
       image: kiamol/ch02-hello-kiamol
+      env:
+        - name: FIRST
+          value: "first_value"
+        - name: SECOND
+          value: "second_value"
 
