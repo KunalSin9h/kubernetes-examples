@@ -16,4 +16,12 @@ spec:
           value: "first_value"
         - name: SECOND
           value: "second_value"
+        - name: FROM_CONFIG_MAP
+          valueFrom:
+            configMapKeyRef:
+              name: some_name_of_configmap
+              key: some_key_in_that_configmap
+      envFrom:
+        - configMapRef:
+            name: name_of_config_map # load the entire config map data 
 
