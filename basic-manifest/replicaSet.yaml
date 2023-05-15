@@ -1,0 +1,26 @@
+# ReplicaSet Manifest File
+apiVersion: apps/v1
+kind: ReplicaSet # the spec is almost identical to a Deployment
+
+metadata:
+  name: whoami-web
+  labels:
+    kiamol: ch06
+
+spec:
+  replicas: 2
+  selector:  # Selector for replicaSet to find its Pods
+    matchLabels:
+      app: whoami-web
+  template: # usual Pod Spec
+    metadata:
+      labels:
+        app: whoami-web
+    spec:
+      containers:
+        - name: web
+          image: kiamol/ch02-whoami
+          ports:
+            - containerPort: 80
+              name: http
+

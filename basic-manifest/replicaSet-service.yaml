@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: whoami-web # DNS Domain name
+  labels:
+    kiamol: ch06 # this label will be helpful  for finding resources of with same label
+
+spec: 
+  selector: 
+    app: whoami-web # Pod (link sending to ip)
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 80
+   
